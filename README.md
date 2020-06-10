@@ -1,11 +1,30 @@
 # Hello Friend NG
 
-![Hello Friend NG](https://dsh.re/d27822)
+![Hello Friend NG](https://dsh.re/2bd45)
 
 ## General informations
 
 This theme was highly inspired by the [hello-friend](https://github.com/panr/hugo-theme-hello-friend) and [hermit](https://github.com/Track3/hermit). A lot of kudos for theier great work.
 
+---
+## Table of Contents
+
+- [Features](#features)
+- [How to start](#how-to-start)
+- [How to configure](#how-to-configure)
+- [More](#more-things)
+  - [Built in shortcodes](#built-in-shortcodes)
+    - [image](#image)
+  - [Code highlighting](#code-highlighting)
+  - [Favicon](#favicon)
+- [Social Icons](#social-icons)
+- [Known issues](#known-issues)
+- [How to edit the theme](#how-to-edit-the-theme)
+- [Changelog](CHANGELOG.md)
+- [Sponsoring](#sponsoring)
+- [Licence](#licence)
+
+---
 ## Features
 
 - Theming: **dark/light mode**, depending on your preferences (dark is default, but you can change it)
@@ -35,18 +54,24 @@ $ git submodule add https://github.com/rhazdon/hugo-theme-hello-friend-ng.git th
 ## How to configure
 
 The theme doesn't require any advanced configuration. Just copy the following config file.
+To see all possible configurations, [check the docs](docs/config.md).
 Note: There are more options to configure. Take a look into the `config.toml` in `exampleSite`.
 
 ``` toml
-baseurl = "/"
+baseurl      = "localhost"
+title        = "My Blog"
 languageCode = "en-us"
-theme = "hello-friend-ng"
+theme        = "hello-friend-ng"
+paginate     = 10
 
 [params]
   dateform        = "Jan 2, 2006"
   dateformShort   = "Jan 2"
   dateformNum     = "2006-01-02"
   dateformNumTime = "2006-01-02 15:04 -0700"
+
+  # Subtitle for home
+  homeSubtitle = "A simple and beautiful blog"
 
   # Set disableReadOtherPosts to true in order to hide the links to other posts.
   disableReadOtherPosts = false
@@ -56,18 +81,20 @@ theme = "hello-friend-ng"
   keywords = "homepage, blog"
   images = [""]
 
-  # Directory name of your blog content (default is `content/posts`)
-  contentTypeName = "posts"
-
   # Default theme "light" or "dark"
   defaultTheme = "dark"
+
+[taxonomies]
+    category = "blog"
+    tag      = "tags"
+    series   = "series"
 
 [languages]
   [languages.en]
     title = "Hello Friend NG"
     subtitle = "A simple theme for Hugo"
     keywords = ""
-    copyright = ""
+    copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
     readOtherPosts = "Read other posts"
 
     [languages.en.params.logo]
@@ -85,23 +112,13 @@ theme = "hello-friend-ng"
     url        = "/posts"
 ```
 
-## How to run your site
-
-From your Hugo root directory run:
-
-```
-$ hugo server -t hello-friend-ng
-```
-
-and go to `localhost:1313` in your browser. From now on all the changes you make will go live, so you don't need to refresh your browser every single time.
-
 ## More things
 
 ### Built-in shortcodes
 
 Of course you are able to use all default shortcodes from hugo (https://gohugo.io/content-management/shortcodes/).
 
-#### `image`
+#### image
 
 Properties:
 
@@ -130,45 +147,11 @@ By default the theme is using PrismJS to color your code syntax. All you need to
 
 ### Favicon
 
-Use [RealFaviconGenerator](https://realfavicongenerator.net/) to generate these files, put them into your site's static folder:
+Check the [docs](docs/favicons.md).
 
-- android-chrome-192x192.png
-- android-chrome-512x512.png
-- apple-touch-icon.png
-- favicon-16x16.png
-- favicon-32x32.png
-- favicon.ico
-- mstile-150x150.png
-- safari-pinned-tab.svg
-- site.webmanifest
+## Social Icons:
 
-
-
-## Available Social Icons:
-
-- [codechef](https://simpleicons.org/?q=codechef)
-- [codepen](https://simpleicons.org/?q=codepen)
-- [docker](https://simpleicons.org/?q=docker)
-- [dribble](https://simpleicons.org/?q=dribble)
-- [email](https://feathericons.com/?query=mail)
-- [facebook](https://simpleicons.org/?q=facebook)
-- gitbook
-- [github](https://feathericons.com/?query=github)
-- [gitlab](https://feathericons.com/?query=gitlab)
-- [instagram](https://feathericons.com/?query=instagram)
-- [kaggle](https://simpleicons.org/?q=kaggle)
-- [keybase](https://simpleicons.org/?q=keybase)
-- [mastodon](https://simpleicons.org/?q=mastodon)
-- [linkedin](https://feathericons.com/?query=linked)
-- [podcasts-apple](https://simpleicons.org/?q=podcast)
-- [podcasts-google](https://simpleicons.org/?q=podcast)
-- [reddit](https://simpleicons.org/?q=reddit)
-- [slack](https://simpleicons.org/?q=slack)
-- stackoverflow
-- telegram
-- twitch
-- twitter
-- youtube
+Take a look into this [list](docs/svgs.md)
 
 If you need another one, just open an issue or create a pull request with your wished icon. :)
 
@@ -187,24 +170,12 @@ Either you comment it out completely or you write the following in
 
 ## How to edit the theme
 
-If you really want to edit the theme, you need to install Node dependencies. To do this, go to the theme directory (from your Hugo root directory):
+Just edit it. You don't need any node stuff. ;)
 
-```
-$ cd themes/hello-friend-ng
-```
+## Sponsoring
 
-and then run:
-
-```
-$ npm install
-```
-
-## Third Party
-
-  - [normalize.css](https://github.com/necolas/normalize.css)
-  - [Feather Open Source Icons](https://github.com/feathericons/feather)
-  - [Simple Icons](https://simpleicons.org/)
-  - [Flag Icon](https://github.com/lipis/flag-icon-css)
+If you like my work and if you think this project is worth to support it, just <br />
+<a href="https://www.buymeacoffee.com/djordjeatlialp" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-green.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" ></a>
 
 ## Licence
 

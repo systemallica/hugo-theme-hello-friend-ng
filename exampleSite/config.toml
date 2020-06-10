@@ -1,13 +1,12 @@
 baseURL = "https://example.com"
 title   = "Hello Friend NG"
-
-DefaultContentLanguage = "en"
-
+languageCode = "en-us"
 theme = "hello-friend-ng"
 
 PygmentsCodeFences = true
 PygmentsStyle = "monokai"
 
+paginate  = 10
 rssLimit  = 10  # Maximum number of items in the RSS feed.
 copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License." # This message is only used by the RSS template.
 
@@ -22,7 +21,7 @@ publishDir   = "public"
 
 buildDrafts  = false
 buildFuture  = false
-buildExpored = false
+buildExpired = false
 canonifyURLs = true
 
 enableRobotsTXT = true
@@ -46,6 +45,7 @@ disableHugoGeneratorInject = false
 [taxonomies]
   tag      = "tags"
   category = "categories"
+  series   = "series"
 
 [params]
   dateform        = "Jan 2, 2006"
@@ -74,9 +74,6 @@ disableHugoGeneratorInject = false
   # Toggle this option need to rebuild SCSS, requires extended version of Hugo
   justifyContent = false  # Set "text-align: justify" to .content.
 
-  # Directory name of your blog content (default is `content/posts`)
-  contentTypeName = "posts"
-
   # Default theme "light" or "dark"
   defaultTheme = "dark"
   themeColor = "#252627"
@@ -96,6 +93,10 @@ disableHugoGeneratorInject = false
     # logoCursorColor    = "#67a2c9"
     # Set to a valid CSS time value to change the animation duration, "0s" to disable.
     # logoCursorAnimate  = "2s"
+
+  [params.portrait]
+    path = "/img/image.jpg"
+    alt = "Portrait"
 
   # Social icons
   [[params.social]]
