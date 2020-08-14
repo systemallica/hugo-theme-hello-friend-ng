@@ -1,3 +1,8 @@
 {{ range . -}}
-    &nbsp; <a href="{{ .url }}" target="_blank" rel="noopener" title="{{ .name | humanize }}">{{ partial "svg.html" . }}</a> &nbsp;
+    {{- if (eq .name "mailgo") -}}
+        &nbsp; <a href="#mailgo" data-address="{{ .address }}" data-domain="{{ .domain }}" title="{{ .name | humanize }}">{{ partial "svg.html" . }}</a> &nbsp;
+        <script src="https://cdn.jsdelivr.net/npm/mailgo@0.9.14/dist/mailgo.min.js"></script>
+    {{- else -}}
+        &nbsp; <a href="{{ .url }}" target="_blank" rel="noopener" title="{{ .name | humanize }}">{{ partial "svg.html" . }}</a> &nbsp;
+    {{- end -}}
 {{- end -}}
